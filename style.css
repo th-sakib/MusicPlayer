@@ -1,0 +1,118 @@
+:root {
+    --primary-color: #fff7e4;
+    --primary-text: #DF1212;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {}
+
+/* header section navbar styles */
+.logo img {
+    height: 4rem;
+    padding: 0 8px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    background: var(--primary-color);
+}
+
+ul li {
+    list-style-type: none;
+    padding: 0 12px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: var(--primary-text);
+}
+/* play list style */
+.container {
+    padding: 0 12px;
+}
+.play-list {
+	min-height: 70vh;
+	max-width: 1240px;
+	background: #000000;
+	margin: auto;
+	background-image: url('files/listening-music.png');
+	background-size: 26rem;
+	background-repeat: no-repeat;
+	background-position: bottom right;
+    border-radius: 0.8rem;
+    padding: 0 1rem;
+}
+/* song name and album art style */
+.songs {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: var(--primary-color);
+	width: 73%;
+	padding: 6px 2rem;
+	border-radius: 3rem;
+    margin-bottom: 12px;
+}
+.songs img {
+    height: 2rem;
+}
+.songs .album-cover {
+    border-radius: 50%;
+}
+
+.time-stamp {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+
+/* music controls style */
+.music-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8rem;
+    background: var(--primary-color);
+    flex-direction: column;
+    position: sticky;
+    bottom: 0;
+    gap: 1rem;
+}
+
+#progress-bar {
+    width: 80%;
+    /* background: linear-gradient(to right, #82CFD0 0%, #82CFD0 50%, #fff 50%, #fff 100%); */
+    /* border: solid 1px #82CFD0; */
+    /* border-radius: 8px;
+    height: 0.45rem;
+    /* width: 80%; */
+    /* outline: none;
+    /* transition: background 450ms ease-in; */
+    /* -webkit-appearance: none;
+    background: #dd5d3d;
+    margin-top: 2rem; */
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2%;
+    gap: 1.5rem;
+}
+
