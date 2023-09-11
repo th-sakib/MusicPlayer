@@ -218,4 +218,8 @@ ul li a {
     .music-controls {
         gap: .2rem;
     }
+    nav ul {
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
 }
