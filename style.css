@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;500&display=swap');
+
+/* font-family: 'Kanit', sans-serif; */
 :root {
     --primary-color: #fff7e4;
     --primary-text: #DF1212;
+    --primary-font: 'Kanit', sans-serif;
 }
 
 * {
@@ -9,17 +13,32 @@
     box-sizing: border-box;
 }
 
-body {}
+body {
+    font-family: var(--primary-font);
+}
+
+.play-list>h2 {
+    color: var(--primary-text);
+    font-weight: 400;
+    margin: 1rem 25%
+}
 
 /* header section navbar styles */
 .logo img {
     height: 4rem;
-    padding: 0 8px;
+    padding: 0 0 0 30px;
+}
+
+#logo-text {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-left: -0.3rem;
 }
 
 .logo {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 nav ul {
@@ -31,42 +50,51 @@ nav ul {
 ul li {
     list-style-type: none;
     padding: 0 12px;
+    cursor: pointer;
 }
 
 ul li a {
     text-decoration: none;
     color: var(--primary-text);
 }
+
 /* play list style */
 .container {
     padding: 0 12px;
 }
+
 .play-list {
-	min-height: 70vh;
-	max-width: 1240px;
-	background: #000000;
-	margin: auto;
-	background-image: url('files/listening-music.png');
-	background-size: 26rem;
-	background-repeat: no-repeat;
-	background-position: bottom right;
+    min-height: 70vh;
+    max-width: 1240px;
+    background: #000000;
+    margin: auto;
+    background-image: url('files/listening-music.png');
+    background-size: 26rem;
+    background-repeat: no-repeat;
+    background-position: bottom right;
     border-radius: 0.8rem;
-    padding: 0 1rem;
+    padding: 1rem 1rem;
+    color: var(--primary-color);
+    text-align: justify;
 }
+
 /* song name and album art style */
 .songs {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background: var(--primary-color);
-	width: 73%;
-	padding: 6px 2rem;
-	border-radius: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background: background: rgb(238,132,122); */
+    background: radial-gradient(circle, rgba(238, 132, 122, 0.6306722518108806) 18%, rgba(223, 18, 18, 0.5942576859845501) 95%);
+    width: 73%;
+    padding: 6px 2rem;
+    border-radius: 3rem;
     margin-bottom: 12px;
 }
+
 .songs img {
     height: 2rem;
 }
+
 .songs .album-cover {
     border-radius: 50%;
 }
@@ -78,8 +106,9 @@ ul li a {
     gap: 1rem;
 }
 
-
-
+.time-stamp img {
+    cursor: pointer;
+}
 
 /* music controls style */
 .music-controls {
@@ -96,6 +125,7 @@ ul li a {
 
 #progress-bar {
     width: 80%;
+    cursor: pointer;
     /* background: linear-gradient(to right, #82CFD0 0%, #82CFD0 50%, #fff 50%, #fff 100%); */
     /* border: solid 1px #82CFD0; */
     /* border-radius: 8px;
@@ -114,5 +144,78 @@ ul li a {
     align-items: center;
     width: 2%;
     gap: 1.5rem;
+    cursor: pointer;
 }
 
+#gif {
+    width: 2.5rem;
+    opacity: 0;
+    transition: opacity .4s ease;
+    height: 2rem;
+}
+
+.title {
+    background: transparent;
+    position: absolute;
+    left: 10%;
+    bottom: 35%;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    color: var(--primary-text)
+}
+
+/* pause button changing */
+.remove-it {
+    display: none;
+    transition: display .5s ease;
+}
+
+.hide-it {
+    opacity: 0;
+}
+
+
+/* @keyframes animation-name {
+    0% {
+        transform: translateX(5%)
+    }
+
+    100% {
+        transform: translateX(-100%)
+    }
+} */
+
+@media only screen and (max-width: 614px) {
+    .play-list>h2 {
+        /* color: var(--primary-text); */
+        font-weight: 200;
+        margin: 1rem 2%;
+    }
+
+    .title {
+        /* left: 20%;
+        bottom: 37.5%; */
+        position: unset;
+        order: 1;
+    }
+
+    .songs>span {
+        /* font-size: 150px; */
+        white-space: nowrap;
+        /* animation: animation-name 5s infinite; */
+        /* animation-timing-function: linear; */
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .songs {
+        width: 100%;
+    }
+    .control-buttons {
+        order: 2;
+    }
+    .music-controls {
+        gap: .2rem;
+    }
+}

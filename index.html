@@ -13,7 +13,8 @@
     <header>
         <nav>
             <ul>
-                <li class="logo"><img src="files/music-player.jpg" alt="Music Player Logo"><a href="#">MusicPlayer</a>
+                <li class="logo"><img src="files/music-player.jpg" alt="Music Player Logo"><a href="#"
+                        id="logo-text">MusicPlayer</a>
                 </li>
                 <li><a href="#">home</a></li>
                 <li><a href="#">about</a></li>
@@ -29,7 +30,8 @@
                     <span>Song Name</span>
                     <div class="time-stamp">
                         <span>00:00</span>
-                        <img src="files/icons/play-solid.svg" alt="play button">
+                        <img class="play-song-button" id="0" src="files/icons/play-solid.svg" alt="play button">
+                        <img class="pause-song-button remove-it"  src="files/icons/circle-pause-regular.svg" alt="pause button">
                     </div>
                 </div>
                 <div class="songs">
@@ -37,7 +39,8 @@
                     <span>Song Name</span>
                     <div class="time-stamp">
                         <span>00:00</span>
-                        <img src="files/icons/play-solid.svg" alt="play button">
+                        <img class="play-song-button" id="1" src="files/icons/play-solid.svg" alt="play button">
+                        <img class="pause-song-button remove-it"  src="files/icons/circle-pause-regular.svg" alt="pause button">
                     </div>
                 </div>
                 <div class="songs">
@@ -45,7 +48,8 @@
                     <span>Song Name</span>
                     <div class="time-stamp">
                         <span>00:00</span>
-                        <img src="files/icons/play-solid.svg" alt="play button">
+                        <img class="play-song-button" id="2" src="files/icons/play-solid.svg" alt="play button">
+                        <img class="pause-song-button remove-it"  src="files/icons/circle-pause-regular.svg" alt="pause button">
                     </div>
                 </div>
                 <div class="songs">
@@ -53,7 +57,8 @@
                     <span>Song Name</span>
                     <div class="time-stamp">
                         <span>00:00</span>
-                        <img src="files/icons/play-solid.svg" alt="play button">
+                        <img class="play-song-button" id="3" src="files/icons/play-solid.svg" alt="play button">
+                        <img class="pause-song-button remove-it"  src="files/icons/circle-pause-regular.svg" alt="pause button">
                     </div>
                 </div>
                 <div class="songs">
@@ -61,7 +66,8 @@
                     <span>Song Name</span>
                     <div class="time-stamp">
                         <span>00:00</span>
-                        <img src="files/icons/play-solid.svg" alt="play button">
+                        <img class="play-song-button" id="4" src="files/icons/play-solid.svg" alt="play button">
+                        <img class="pause-song-button remove-it"  src="files/icons/circle-pause-regular.svg" alt="pause button">
                     </div>
                 </div>
                 <div class="songs">
@@ -69,7 +75,8 @@
                     <span>Song Name</span>
                     <div class="time-stamp">
                         <span>00:00</span>
-                        <img src="files/icons/play-solid.svg" alt="play button">
+                        <img class="play-song-button" id="5" src="files/icons/play-solid.svg" alt="play button">
+                        <img class="pause-song-button remove-it"  src="files/icons/circle-pause-regular.svg" alt="pause button">
                     </div>
                 </div>
                 <div class="songs">
@@ -77,7 +84,8 @@
                     <span>Song Name</span>
                     <div class="time-stamp">
                         <span>00:00</span>
-                        <img src="files/icons/play-solid.svg" alt="play button">
+                        <img class="play-song-button" id="6" src="files/icons/play-solid.svg" alt="play button">
+                        <img class="pause-song-button remove-it" src="files/icons/circle-pause-regular.svg" alt="pause button">
                     </div>
                 </div>
                 <div class="songs">
@@ -85,7 +93,8 @@
                     <span>Song Name</span>
                     <div class="time-stamp">
                         <span>00:00</span>
-                        <img src="files/icons/play-solid.svg" alt="play button">
+                        <img class="play-song-button" id="7" src="files/icons/play-solid.svg" alt="play button">
+                        <img class="pause-song-button remove-it" src="files/icons/circle-pause-regular.svg" alt="pause button">
                     </div>
                 </div>
                 <div class="songs">
@@ -93,16 +102,24 @@
                     <span>Song Name</span>
                     <div class="time-stamp">
                         <span>00:00</span>
-                        <img src="files/icons/play-solid.svg" alt="play button">
+                        <img class="play-song-button" id="8" src="files/icons/play-solid.svg" alt="play button">
+                        <img class="pause-song-button remove-it" src="files/icons/circle-pause-regular.svg" alt="pause button">
                     </div>
                 </div>
             </div>
+            <!-- bottom controls -->
             <div class="music-controls">
                 <input type="range" name="progress-bar" id="progress-bar" min="0%" max="100%" value="0%">
                 <div class="control-buttons">
-                    <img src="files/icons/backward-step-solid.svg" alt="backward button">
-                    <img src="files/icons/play-solid.svg" alt="play button">
-                    <img src="files/icons/forward-step-solid.svg" alt="forward button">
+                    <img id="backward-button" src="files/icons/backward-step-solid.svg" alt="backward button">
+                    <img id="play-button" src="files/icons/play-solid.svg" alt="play button">
+                    <img class="remove-it" id="pause-button" src="files/icons/circle-pause-regular.svg"
+                        alt="play button">
+                    <img id="forward-button" src="files/icons/forward-step-solid.svg" alt="forward button">
+                </div>
+                <div class="title">
+                    <img id="gif" src="files/sound.gif" alt="a gif which represent music is playing">
+                    <span id="song-name-show">Heroes Tonight</span>
                 </div>
             </div>
         </div>
