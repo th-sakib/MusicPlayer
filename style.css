@@ -171,8 +171,10 @@ ul li a {
     transition: display .5s ease;
 }
 
-.hide-it {
-    opacity: 0;
+.bold-it {
+	/* transform: scale(1deg); */
+	transform: scale(103%);
+	font-size: large;
 }
 
 
@@ -186,7 +188,7 @@ ul li a {
     }
 } */
 
-@media only screen and (max-width: 614px) {
+@media all and (max-width: 614px) {
     .play-list>h2 {
         /* color: var(--primary-text); */
         font-weight: 200;
@@ -194,10 +196,11 @@ ul li a {
     }
 
     .title {
-        /* left: 20%;
-        bottom: 37.5%; */
+        /* left: 20%; */
+        /* bottom: 37.5%; */
         position: unset;
         order: 1;
+        margin-left: -2rem;
     }
 
     .songs>span {
@@ -212,14 +215,27 @@ ul li a {
     .songs {
         width: 100%;
     }
+
     .control-buttons {
         order: 2;
     }
+
     .music-controls {
         gap: .2rem;
     }
+
     nav ul {
         flex-direction: column;
         margin-bottom: 1rem;
     }
+
+    .control-buttons {
+        width: 1rem;
+    }
+    .bold-it {
+        /* transform: scale(1deg); */
+        transform: scale(106%);
+        font-size: large;
+    }
+
 }

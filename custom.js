@@ -39,9 +39,14 @@ songList.forEach(function (obj, i) {
 playButton.addEventListener('click', function () {
     if (audioElement.paused || audioElement.currentTime <= 0) {
         audioElement.play();
+
         gif.style.opacity = 1;
         playButton.classList.add('remove-it');
         pauseButton.classList.remove('remove-it');
+        playSongButton[songIndex].parentElement.parentElement.classList.add('bold-it')
+
+        document.getElementById(`${songIndex}`).classList.add('remove-it');
+        document.getElementById(`${songIndex}`).nextElementSibling.classList.remove('remove-it');
 
     }
 })
@@ -51,6 +56,10 @@ pauseButton.addEventListener('click', function () {
         gif.style.opacity = 0;
         pauseButton.classList.add('remove-it');
         playButton.classList.remove('remove-it');
+        // playSongButton[songIndex].parentElement.parentElement.classList.remove('bold-it');
+        
+        document.getElementById(`${songIndex}`).classList.remove('remove-it');
+        document.getElementById(`${songIndex}`).nextElementSibling.classList.add('remove-it');
     }
 })
 
@@ -67,6 +76,7 @@ const makeAllPlay = () => {
     playSongButton.forEach(function (element) {
         element.classList.remove('remove-it');
         element.nextElementSibling.classList.add('remove-it');
+        element.parentElement.parentElement.classList.remove('bold-it');
     })
 }
 playSongButton.forEach(function (element, i) {
@@ -78,7 +88,8 @@ playSongButton.forEach(function (element, i) {
 
         // audio.type = "audio/mp3";
         // audioElement.type = "audio/mp3";
-        audioElement.currentTime = 0;
+        // audioElement.currentTime = 0;
+        progressBar.value = parseInt((audioElement.currentTime / audioElement.duration) * 100);
 
         gif.style.opacity = 1;
         playButton.classList.add('remove-it');
@@ -94,6 +105,23 @@ playSongButton.forEach(function (element, i) {
         e.target.classList.add('remove-it');
         e.target.nextElementSibling.classList.remove('remove-it');
 
+        e.target.parentElement.parentElement.classList.add('bold-it')
+
+    })
+})
+// handle pause button individuals 
+pauseSongButton.forEach((element) => {
+    element.addEventListener('click', function (e) {
+        gif.style.opacity = 0;
+        playButton.classList.remove('remove-it');
+        pauseButton.classList.add('remove-it');
+        audioElement.pause();
+        progressBar.value = parseInt((audioElement.currentTime / audioElement.duration) * 100);
+
+        e.target.classList.add('remove-it');
+        e.target.previousElementSibling.classList.remove('remove-it');
+
+        // e.target.parentElement.parentElement.classList.add('bold-it')
     })
 })
 
@@ -119,7 +147,8 @@ forwardButton.addEventListener('click', function (element) {
     makeAllPlay();
     playSongButton.forEach((element, i) => {
         document.getElementById(`${songIndex}`).classList.add('remove-it');
-        document.getElementById(`${songIndex}`).nextElementSibling.classList.remove('remove-it')
+        document.getElementById(`${songIndex}`).nextElementSibling.classList.remove('remove-it');
+        document.getElementById(`${songIndex}`).parentElement.parentElement.classList.add('bold-it')
     })
 
 })
@@ -144,6 +173,7 @@ backwardButton.addEventListener('click', function () {
     makeAllPlay();
     playSongButton.forEach((element, i) => {
         document.getElementById(`${songIndex}`).classList.add('remove-it');
-        document.getElementById(`${songIndex}`).nextElementSibling.classList.remove('remove-it')
+        document.getElementById(`${songIndex}`).nextElementSibling.classList.remove('remove-it');
+        document.getElementById(`${songIndex}`).parentElement.parentElement.classList.add('bold-it');
     })
 })
